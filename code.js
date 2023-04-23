@@ -16,16 +16,15 @@
 
 	// console.info(TTItems);
 	const elItemsParent = document.getElementById('Items');
-	const elItem = document.getElementsByClassName('Item')[0];
-	elItem.remove();
-
-	// document.createElement(`<div>foo</div>`);
-	console.info(elItemsParent);
-	console.info(elItem);
+	const elItemTemplate = document.getElementsByTagName('template')[0];
+	// console.info(elItemsParent);
+	// console.info(elItemTemplate);
 
 	for (const Item of TTItems)
 	{
-		console.info(Item);
+		let elItem = elItemTemplate.content.cloneNode(true);
+		console.log(elItem.firstChild);
+		elItemsParent.appendChild(elItem);
 	}
 
 })();
