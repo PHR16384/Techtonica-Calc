@@ -1,0 +1,24 @@
+- let TITLE = 'Techtonica Calculator'
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Share%20Tech%20Mono')
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Bruno%20Ace')
+		style
+			include ./styles.css
+		script(type='text/javascript', defer)
+			include ./code.js
+		title= TITLE
+
+	body 
+		h1= TITLE
+
+		h2 List of items:
+		#Items.grid
+			.Item
+
+		img(src='/item-concepts.webp')
