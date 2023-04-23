@@ -1,0 +1,60 @@
+$GOLD: goldenrod;
+$NAVY: rgb(24,24,36);
+$GREEN: rgb(24,96,48);
+$RAD: rgb(192,255,96);
+
+html {
+	background-color: $NAVY;
+	box-sizing: border-box;
+	color: white;
+	font-family: 'Albert Sans';
+	font-size: 20px;
+	margin: 0;
+	min-height: 100vh;
+	overflow-x: clip;
+	width: 100%;
+}
+body {
+	margin: 0;
+	// height: 100%;
+	// width: 100%;
+}
+
+h1 {
+	font: 800 2.5rem 'Bruno Ace';
+	text-transform: uppercase;
+	text-align: center;
+}
+h2 {
+	background-color: $GOLD;
+	color: $NAVY;
+	font-family: 'Share Tech Mono';
+}
+
+b {
+	font-weight: 800;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 1rem;
+	padding: 0.5rem;
+}
+
+.Item {
+	border: 1px solid white;
+	padding: 0.5rem;
+	text-align: center;
+
+	img {
+		height: 100px;
+		width: 100px;
+		outline: 4px solid $GREEN;
+		box-shadow: 0 0 4px 4px $RAD;
+
+		&:hover {
+			// box-shadow: none;
+		}
+	}
+}

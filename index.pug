@@ -10,7 +10,7 @@ html(lang="en")
 		- for (let x=0; x<GoogleFonts.length; x++)
 			link(rel='stylesheet', href=`https://fonts.googleapis.com/css?family=${GoogleFonts[x]}`)
 		style
-			include ./styles.css
+			include ./dist/styles.css
 		script(type='text/javascript', defer)
 			include ./code.js
 		title= TITLE
