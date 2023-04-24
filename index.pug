@@ -19,12 +19,11 @@ html(lang="en")
 		h1= TITLE
 
 		h2 List of items:
-		#Items.grid
+		dl#Items.grid
 			template
 				.Item
-					h3 Item-Name
-					img
-					p Example description for this item.
-
-		div
-			img(src='/item-concepts.webp')
+					h3 Item-Name ("Description Term")
+					.img
+					p.desc Example description for this item.
+					dt Type:
+					dd.type type goes here

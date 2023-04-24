@@ -2,53 +2,54 @@
 	{
 		"name": "PlantMatter",
 		"desc": "Various parts of plants and flora, usable as fuel.",
-		"img": "SRC",
+		"img": "616,416",
 		"type": 0,
 		"fuel": true
 	},
 	{
 		"name": "Dirt",
 		"desc": "Collected from terraforming with your Pickaxe or M.O.L.E.  Use unknown.",
-		"img": "SRC",
+		"img": "790,550",
 		"type": 0
 	},
 	{
 		"name": "Limestone",
 		"desc": "Collected from terraforming, or from minable deposits.  Actually has a use in crafting.",
-		"img": "SRC",
+		"img": "70,712",
 		"type": 0
 	},
 	{
 		"name": "Iron Ore",
 		"desc": "Extraordinarily pure source of Iron.  Convertible into Iron Ingots at a Smelter.",
-		"img": "SRC",
+		"img": "248,216",
 		"type": 0
 	},
 	{
 		"name": "Copper Ore",
 		"desc": "Extraordinarily pure source of Copper.  Convertible into Copper Ingots at a Smelter.",
-		"img": "SRC",
+		"img": "432,524",
 		"type": 0
 	},
 	{
 		"name": "Iron Ingot",
 		"desc": "Ingot of Iron.  Heavy and durable.",
-		"img": "SRC",
+		"img": "248,388",
 		"type": 1,
 		"ingredients": {"3": 2}
 	},
 	{
 		"name": "Copper Ingot",
 		"desc": "Ingot of Copper.  Light and conductive.",
-		"img": "SRC",
+		"img": "432,708",
 		"type": 1,
 		"ingredients": {"4": 2}
 	},
 	{
 		"name": "Pickaxe",
+		"desc": "Serviceable pickaxe.  Capable of breaking and harvesting ore from basic mineral veins.",
 		"img": "SRC",
 		"type": 2,
-		"ingredients": {}
+		"ingredients": {"5": 2}
 	},
 	{
 		"name": "Driller",

@@ -8,7 +8,7 @@ html {
 	box-sizing: border-box;
 	color: white;
 	font-family: 'Albert Sans';
-	font-size: 20px;
+	font-size: 16px;
 	margin: 0;
 	min-height: 100vh;
 	overflow-x: clip;
@@ -21,23 +21,31 @@ body {
 }
 
 h1 {
-	font: 800 2.5rem 'Bruno Ace';
+	font: 800 3rem 'Bruno Ace';
 	text-transform: uppercase;
 	text-align: center;
 }
 h2 {
+	font-size: 2rem;
 	background-color: $GOLD;
 	color: $NAVY;
 	font-family: 'Share Tech Mono';
 }
-
-b {
-	font-weight: 800;
+h3 {
+	font-size: 1.6rem;
+	text-transform: uppercase;
 }
 
+dt,dd {
+	display: inline-block;
+}
+
+
 .grid {
-	display: grid;
-	grid-template-columns: auto auto auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
 	gap: 1rem;
 	padding: 0.5rem;
 }
@@ -46,15 +54,29 @@ b {
 	border: 1px solid white;
 	padding: 0.5rem;
 	text-align: center;
+	width: 16rem;
 
-	img {
-		height: 100px;
-		width: 100px;
-		outline: 4px solid $GREEN;
-		box-shadow: 0 0 4px 4px $RAD;
+	.desc {
+		height: 4rem;
+	}
+	.img {
+		background-image: url('/item-concepts.webp');
+		display: inline-block;
+		height: 180px;
+		width: 180px;
+		outline: 2px solid rebeccapurple;
 
 		&:hover {
-			// box-shadow: none;
+			box-shadow: 0 0 8px 8px $RAD;
 		}
+	}
+	dt {
+		font-size: 1.2rem;
+		text-transform: uppercase;
+	}
+	dd {
+		font-size: 1.2rem;
+		font-weight: 800;
+		text-transform: uppercase;
 	}
 }
