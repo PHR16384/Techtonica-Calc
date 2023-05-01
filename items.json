@@ -4,6 +4,7 @@
 		"desc": "Various parts of plants and flora, usable as fuel.",
 		"img": "616,416",
 		"type": 0,
+		"cat": "Intermediates > Raw Materials",
 		"fuel": true
 	},
 	{
@@ -14,47 +15,256 @@
 	},
 	{
 		"name": "Limestone",
-		"desc": "Collected from terraforming, or from minable deposits.  Actually has a use in crafting.",
+		"desc": "Collected from terraforming, or from minable deposits.  Eventually used in crafting.",
 		"img": "70,712",
 		"type": 0
 	},
 	{
 		"name": "Iron Ore",
-		"desc": "Extraordinarily pure source of Iron.  Convertible into Iron Ingots at a Smelter.",
+		"desc": "Extraordinarily pure source of Iron.  Convertible into $7 at a Smelter.",
 		"img": "248,216",
 		"type": 0
 	},
 	{
 		"name": "Copper Ore",
-		"desc": "Extraordinarily pure source of Copper.  Convertible into Copper Ingots at a Smelter.",
+		"desc": "Extraordinarily pure source of Copper.  Convertible into $8 at a Smelter.",
 		"img": "432,524",
 		"type": 0
 	},
+
+	{
+		"name": "PlantMatter Fiber",
+		"desc": "Sturdy and lightweight plant material.  Can be used as fuel.",
+		"img": "60,348",
+		"type": 1,
+		"cat": "Intermediates > Raw Materials",
+		"fuel": true,
+		"recipe": {"-1": 4},
+		"craft": [-1,"thresher"]
+	},
+	{
+		"name": "BioBrick",
+		"desc": "Compressed biomatter.  Shaped for simplified storage and transport.  Excellent fuel source.",
+		"img": "612,584",
+		"type": 1,
+		"cat": "Intermediates > Raw Materials",
+		"fuel": true,
+		"recipe": {"5": 4, "2": 4, "kindle.extract": 8},
+		"time": 6,
+		"craft": [-1,"asm"]
+	},
+
 	{
 		"name": "Iron Ingot",
 		"desc": "Ingot of Iron.  Heavy and durable.",
 		"img": "248,388",
 		"type": 1,
-		"ingredients": {"3": 2}
+		"cat": "Intermediates > Ingots",
+		"recipe": {"3": 2},
+		"time": 3.571428
 	},
 	{
 		"name": "Copper Ingot",
 		"desc": "Ingot of Copper.  Light and conductive.",
 		"img": "432,708",
 		"type": 1,
-		"ingredients": {"4": 2}
+		"cat": "Intermediates > Ingots",
+		"recipe": {"4": 2},
+		"time": 3.571428
 	},
+
+	{
+		"name": "PlantMatter Frame",
+		"desc": "Lightweight structural material made from condensed $5.",
+		"img": "X,Y",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"fuel": true,
+		"recipe": {"5": 5},
+		"time": 2,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Iron Frame",
+		"desc": "Rugged and sturdy Iron frame.  Structurally sound.",
+		"img": "248,700",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"recipe": {"7": 7},
+		"time": 2,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Iron Components",
+		"desc": "Gears, bolts, rivets and beyond.  Forged with Iron.",
+		"img": "248,540",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"recipe": {"-1": 3, "7": 2},
+		"time": 1.25,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Copper Frame",
+		"desc": "Lightweight Copper frame.  Highly conductive.",
+		"img": "432,48",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"recipe": {"8": 7},
+		"time": 2,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Copper Components",
+		"desc": "Lightweight Copper frame.  Highly conductive.",
+		"img": "X,Y",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"recipe": {"-1": 3, "8": 3},
+		"time": 2,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Copper Wire",
+		"desc": "Light, durable and conductive Copper wire.",
+		"img": "432,368",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"recipe": {"-1": 5, "8": 2},
+		"time": 1.75,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Mechanical Components",
+		"desc": "Clockwork mechanisms, joints, connections and more.  Packed together and ready for use.",
+		"img": "64,500",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"recipe": {"-1": 3, "7": 2, "8": 2},
+		"time": 2,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Electric Components",
+		"desc": "Electrical chips, sensors, motors and more.  Bundled together and ready for use.",
+		"img": "432,224",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"recipe": {"7": 1, "14": 2},
+		"time": 3.25,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Processor Unit",
+		"desc": "Powerful processing unit.",
+		"img": "64,200",
+		"type": 1,
+		"cat": "Intermediates > Parts",
+		"recipe": {"16": 4, "kindle.extract": 9},
+		"time": 2,
+		"craft": ["asm"]
+	},
+
+	{
+		"name": "Power Floor",
+		"desc": "Rugged and sturdy Iron Frame.  Structurally sound.",
+		"img": "248,700",
+		"type": 3,
+		"cat": "Intermediates > Parts",
+		"recipe": {"7": 1, "14": 1},
+		"time": 0.5,
+		"craft": ["asm"]
+	},
+
 	{
 		"name": "Pickaxe",
 		"desc": "Serviceable pickaxe.  Capable of breaking and harvesting ore from basic mineral veins.",
-		"img": "SRC",
+		"img": "X,Y",
 		"type": 2,
-		"ingredients": {"5": 2}
+		"recipe": {"7": 2}
 	},
 	{
-		"name": "Driller",
-		"img": "SRC",
+		"name": "Mining Drill",
+		"desc": "Magnetized tip simultaneously excavates and collects.  Must be built at Ore Veins.",
+		"img": "X,Y",
 		"type": 3,
-		"ingredients": {}
+		"cat": "Production > Resource Extraction",
+		"recipe": {"10": 2, "11": 18},
+		"time": 7.5
+	},
+	{
+		"name": "Smelter",
+		"desc": "Smelts ores into ingots.",
+		"img": "X,Y",
+		"type": 3,
+		"cat": "Production > Smelting",
+		"recipe": {"2": 10, "13": 7},
+		"time": 3
+	},
+	{
+		"name": "Assembler",
+		"desc": "Automatically assembles parts and machines.  Requires selection of recipe.",
+		"img": "X,Y",
+		"type": 3,
+		"power": 32,
+		"cat": "Production > Assemblers",
+		"recipe": {"14": 10, "15": 8, "10": 2},
+		"time": 8
+	},
+	{
+		"name": "Planter",
+		"desc": "Facility for cultivation of alien flora.  Experimental photonics enable rapid growth.",
+		"img": "X,Y",
+		"type": 3,
+		"power": 5,
+		"cat": "Production > Plants",
+		"recipe": {"11": 6, "15": 4},
+		"time": 4.5
+	},
+	{
+		"name": "Thresher",
+		"desc": "Separates alien flora into materials for fuel and production.",
+		"img": "X,Y",
+		"type": 3,
+		"power": 200,
+		"cat": "Production > Plants",
+		"recipe": {"15": 10, "13": 3, "11": 3},
+		"time": 9
+	},
+	{
+		"name": "Water Wheel",
+		"desc": "Uses water flow as means to generate kinetic energy that can be converted into electric power.  Used with Crank Generator.",
+		"img": "X,Y",
+		"type": 3,
+		"cat": "Production > Power",
+		"recipe": {"10": 7, "15": 32},
+		"time": 12
+	},
+	{
+		"name": "Crank Generator",
+		"desc": "Converts kinetic energy into usable power through hand crank or connected external sources of energy.",
+		"img": "X,Y",
+		"type": 3,
+		"power": -100,
+		"cat": "Production > Power",
+		"recipe": {"12": 5, "16": 10},
+		"time": 15
+	},
+	{
+		"name": "Red Memory Core",
+		"desc": "Processing unit that enables activation of standard technologies.  Core Cluster is formed at 10 Cores.",
+		"img": "X,Y",
+		"type": 3,
+		"cat": "Production > Research",
+		"recipe": {"15": 10, "14": 8},
+		"time": 10.5
+	},
+	{
+		"name": "Green Mem. Core",
+		"desc": "Memory Core variant but it's GREEN.",
+		"img": "X,Y",
+		"type": 3,
+		"cat": "Production > Research",
+		"recipe": {}
 	}
 ]
