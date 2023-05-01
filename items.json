@@ -167,12 +167,32 @@
 
 	{
 		"name": "Power Floor",
-		"desc": "Rugged and sturdy Iron Frame.  Structurally sound.",
+		"desc": "Composed of ultraconductive materials.  Requires electrification to be used as a power source for machinery.",
 		"img": "248,700",
 		"type": 3,
-		"cat": "Intermediates > Parts",
-		"recipe": {"7": 1, "14": 1},
-		"time": 0.5,
+		"cat": "Base Building > Flooring",
+		"recipe": {"-1": 5, "7": 1, "14": 1},
+		"time": 1,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Stairs",
+		"desc": "Composed of unusual plastics.  Cannot conduct electricity between $18s.",
+		"img": "X,Y",
+		"type": 3,
+		"cat": "Base Building > Traversal",
+		"recipe": {"-1": 5, "7": 1, "14": 1},
+		"time": 1,
+		"craft": ["asm"]
+	},
+	{
+		"name": "Beacon",
+		"desc": "Emits trackable signal visible on the compass.",
+		"img": "X,Y",
+		"type": 3,
+		"cat": "Base Building > Utility",
+		"recipe": {"16": 6, "14": 4},
+		"time": 4,
 		"craft": ["asm"]
 	},
 
