@@ -27,12 +27,19 @@
 	{
 		let elItem = elItemTemplate.content.cloneNode(true).firstChild;
 		elItem.querySelector('h3').innerText = `${jItem.name}`;
+
+		if (`${jItem.desc}`.includes('$')) {
+			for ( let sMatch of [...`${jItem.desc}`.matchAll(/\$\d+/g)].flat() ) {
+				// confirm sMatch is a natural?
+				jItem.desc = `${jItem.desc}`.replace(sMatch, `${TTItems[sMatch.slice(1)].name}`);
+			}
+		}
 		elItem.querySelector('p').innerText = `${jItem.desc}`;
 
 		if ( /^\d+,\d+$/.test(`${jItem.img}`) ) {
 			jItem.img = `-${jItem.img.replace(',','px -')}px`;
 			// console.log(jItem.img);
-			elItem.querySelector('.img').style.backgroundPosition = jItem.img;
+			elItem.querySelector('.img').style.backgroundPosition = `${jItem.img}`;
 		}
 
 		if (jItem.type !== undefined) {
