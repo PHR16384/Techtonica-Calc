@@ -8,6 +8,9 @@
 		"📐 Building",
 	];
 
+	// ⚡️ Power Consumption / Production
+	// ⏱ Time to Craft
+
 	const jURL = `/items.json`;
 	const jRequest = new Request(jURL);
 
@@ -23,20 +26,19 @@
 	for (const jItem of TTItems)
 	{
 		let elItem = elItemTemplate.content.cloneNode(true).firstChild;
-		elItem.querySelector('h3').innerText = jItem.name;
-		elItem.querySelector('p').innerText = jItem.desc;
+		elItem.querySelector('h3').innerText = `${jItem.name}`;
+		elItem.querySelector('p').innerText = `${jItem.desc}`;
 
-		if ( /^\d+,\d+$/.test(jItem.img) ) {
+		if ( /^\d+,\d+$/.test(`${jItem.img}`) ) {
 			jItem.img = `-${jItem.img.replace(',','px -')}px`;
 			// console.log(jItem.img);
 			elItem.querySelector('.img').style.backgroundPosition = jItem.img;
 		}
 
 		if (jItem.type !== undefined) {
-			elItem.querySelector('.type').innerText = arItemTypes[jItem.type];
+			elItem.querySelector('.type').innerText = arItemTypes[`${jItem.type}`];
 		}
-		
+
 		elItemsParent.appendChild(elItem);
 	}
-
-})();
+})();	//function self-calls when finished loading
