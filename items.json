@@ -61,7 +61,8 @@
 		"type": 1,
 		"cat": "Intermediates > Ingots",
 		"recipe": {"3": 2},
-		"time": 3.571428
+		"time": 3.571428,
+		"craft": ["smelt"]
 	},
 	{
 		"name": "Copper Ingot",
@@ -70,7 +71,8 @@
 		"type": 1,
 		"cat": "Intermediates > Ingots",
 		"recipe": {"4": 2},
-		"time": 3.571428
+		"time": 3.571428,
+		"craft": ["smelt"]
 	},
 
 	{
@@ -172,7 +174,7 @@
 		"type": 3,
 		"cat": "Base Building > Flooring",
 		"recipe": {"-1": 5, "7": 1, "14": 1},
-		"time": 1,
+		"time": 0.5,
 		"craft": ["asm"]
 	},
 	{
@@ -201,8 +203,10 @@
 		"desc": "Serviceable pickaxe.  Capable of breaking and harvesting ore from basic mineral veins.",
 		"img": "X,Y",
 		"type": 2,
-		"recipe": {"7": 2}
+		"recipe": {"7": 2},
+		"craft": ["asm"]
 	},
+
 	{
 		"name": "Mining Drill",
 		"desc": "Magnetized tip simultaneously excavates and collects.  Must be built at Ore Veins.",
@@ -210,7 +214,8 @@
 		"type": 3,
 		"cat": "Production > Resource Extraction",
 		"recipe": {"10": 2, "11": 18},
-		"time": 7.5
+		"time": 7.5,
+		"craft": ["asm"]
 	},
 	{
 		"name": "Smelter",
@@ -219,17 +224,19 @@
 		"type": 3,
 		"cat": "Production > Smelting",
 		"recipe": {"2": 10, "13": 7},
-		"time": 3
+		"time": 3,
+		"craft": ["asm"]
 	},
 	{
 		"name": "Assembler",
 		"desc": "Automatically assembles parts and machines.  Requires selection of recipe.",
 		"img": "X,Y",
 		"type": 3,
-		"power": 32,
+		"power": 150,
 		"cat": "Production > Assemblers",
 		"recipe": {"14": 10, "15": 8, "10": 2},
-		"time": 8
+		"time": 8,
+		"craft": ["asm"]
 	},
 	{
 		"name": "Planter",
@@ -239,7 +246,8 @@
 		"power": 5,
 		"cat": "Production > Plants",
 		"recipe": {"11": 6, "15": 4},
-		"time": 4.5
+		"time": 4.5,
+		"craft": ["asm"]
 	},
 	{
 		"name": "Thresher",
@@ -249,7 +257,8 @@
 		"power": 200,
 		"cat": "Production > Plants",
 		"recipe": {"15": 10, "13": 3, "11": 3},
-		"time": 9
+		"time": 9,
+		"craft": ["asm"]
 	},
 	{
 		"name": "Water Wheel",
@@ -268,7 +277,8 @@
 		"power": -100,
 		"cat": "Production > Power",
 		"recipe": {"12": 5, "16": 10},
-		"time": 15
+		"time": 15,
+		"craft": ["asm"]
 	},
 	{
 		"name": "Red Memory Core",
@@ -276,8 +286,9 @@
 		"img": "X,Y",
 		"type": 3,
 		"cat": "Production > Research",
-		"recipe": {"15": 10, "14": 8},
-		"time": 10.5
+		"recipe": {"14": 3, "15": 6},
+		"time": 8,
+		"craft": ["asm"]
 	},
 	{
 		"name": "Green Mem. Core",
