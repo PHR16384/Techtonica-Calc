@@ -26,13 +26,18 @@ h1 {
 	text-align: center;
 }
 h2 {
-	font-size: 2rem;
+	font: 800 2rem 'Share Tech Mono';
 	background-color: $GOLD;
 	color: $NAVY;
-	font-family: 'Share Tech Mono';
 }
 h3 {
-	font-size: 1.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5rem;
+	height: 3rem;
+	margin: 0;
+	padding: 0.75rem 0.25rem;
 	text-transform: uppercase;
 }
 
@@ -43,21 +48,21 @@ dt,dd {
 
 .grid {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	flex-flow: row wrap;
+	justify-content: center;
 	gap: 1rem;
 	padding: 0.5rem;
 }
 
 .Item {
 	border: 1px solid white;
-	padding: 0.5rem;
+	padding-bottom: 0.5rem;
 	text-align: center;
-	width: 16rem;
+	width: 16.8rem;
 
 	.desc {
-		height: 4rem;
+		height: 4.25rem;
+		padding: 0 0.5rem 0.4rem;
 	}
 	.img {
 		background-image: url('/item-concepts.webp');
