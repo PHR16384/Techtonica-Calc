@@ -41,17 +41,20 @@
 
 		// SPRITESHEET POSITION:
 		if ( !isNaN(`${jItem.img}`) ) {
-			console.log(`${jItem.img}`);
 			elItem.querySelector('.img').style['background-position-y'] = `-${jItem.img * 152}px`;
 		}
 
 		// ITEM TYPE:
 		if (jItem.type !== undefined) {
-			elItem.querySelector('.type').innerText = arItemTypes[`${jItem.type}`];
+			elItem.querySelector('.type dd').innerText = arItemTypes[`${jItem.type}`];
 		}
 
 		// ITEM CATEGORY:
-		// ?
+		if (jItem.cat !== undefined) {
+			elItem.querySelector('.cat dd').innerText = `${jItem.cat}`;
+		} else {
+			elItem.querySelector(`.cat`).remove();
+		}
 
 		elItemsParent.appendChild(elItem);
 	}

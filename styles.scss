@@ -61,6 +61,21 @@ dt,dd {
 	text-align: center;
 	width: 16.8rem;
 
+	div:not(.img) {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		width: 84%;
+
+		dt {
+			//
+		}
+		dd {
+			margin: 0;
+			text-align: right;
+		}
+	}
+
 	.desc {
 		height: 4.25rem;
 		padding: 0 0.5rem 0.4rem;
@@ -76,10 +91,7 @@ dt,dd {
 			box-shadow: 0 0 8px 8px $RAD;
 		}
 	}
-	dt {
-		text-transform: uppercase;
-	}
-	dd.type {
+	.type {
 		font-weight: 800;
 		text-transform: uppercase;
 	}
