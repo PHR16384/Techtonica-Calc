@@ -10,6 +10,7 @@
 
 	// ⚡️ Power Consumption / Production in kW
 	// ⏱ Time to Craft
+	// 🚫 Can't hand-craft
 
 	const jURL = `/items.json`;
 	const jRequest = new Request(jURL);
@@ -25,9 +26,11 @@
 
 	for (const jItem of TTItems)
 	{
-		let elItem = elItemTemplate.content.cloneNode(true).firstChild;
+		let elItem = elItemTemplate.content.cloneNode(true).firstChild;	//is an array of length 1 w/o firstChild
+		// ITEM NAME:
 		elItem.querySelector('h3').innerText = `${jItem.name}`;
 
+		// ITEM DESCRIPTION:
 		if (`${jItem.desc}`.includes('$')) {
 			for ( let sMatch of [...`${jItem.desc}`.matchAll(/\$\d+/g)].flat() ) {
 				// confirm sMatch is a natural?
@@ -36,14 +39,19 @@
 		}
 		elItem.querySelector('p').innerText = `${jItem.desc}`;
 
+		// SPRITESHEET POSITION:
 		if ( !isNaN(`${jItem.img}`) ) {
 			console.log(`${jItem.img}`);
 			elItem.querySelector('.img').style['background-position-y'] = `-${jItem.img * 152}px`;
 		}
 
+		// ITEM TYPE:
 		if (jItem.type !== undefined) {
 			elItem.querySelector('.type').innerText = arItemTypes[`${jItem.type}`];
 		}
+
+		// ITEM CATEGORY:
+		// ?
 
 		elItemsParent.appendChild(elItem);
 	}
