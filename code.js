@@ -8,7 +8,7 @@
 		"📐 Building",
 	];
 
-	// ⚡️ Power Consumption / Production
+	// ⚡️ Power Consumption / Production in kW
 	// ⏱ Time to Craft
 
 	const jURL = `/items.json`;
@@ -36,10 +36,9 @@
 		}
 		elItem.querySelector('p').innerText = `${jItem.desc}`;
 
-		if ( /^\d+,\d+$/.test(`${jItem.img}`) ) {
-			jItem.img = `-${jItem.img.replace(',','px -')}px`;
-			// console.log(jItem.img);
-			elItem.querySelector('.img').style.backgroundPosition = `${jItem.img}`;
+		if ( !isNaN(`${jItem.img}`) ) {
+			console.log(`${jItem.img}`);
+			elItem.querySelector('.img').style['background-position-y'] = `-${jItem.img * 152}px`;
 		}
 
 		if (jItem.type !== undefined) {
