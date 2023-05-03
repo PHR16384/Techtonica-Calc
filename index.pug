@@ -27,7 +27,17 @@ html(lang="en")
 					p.desc Example description for this item.
 					.type
 						dt Type:
-						dd type goes here
+						dd [type goes here]
 					.cat
 						//- dt Cat.:
 						dd `category > subcat.`
+					.fuel
+						dt 🔥 Burnable
+						dd [burn time]
+					.recipe
+						h4 Recipe:
+						//- div [recipe list here]
+						template
+							.recipeItem
+								dt.img
+								dd.name NAME

@@ -4,13 +4,15 @@
 	const arItemTypes = [
 		`Raw Resource`,
 		`Craft Item`,
-		`🛠️ Equip. Tool`,
-		`📐 Building`,
+		`🛠️Equip.Tool`,
+		`📐Building`,
 	];
 
 	// ⚡️ Power Consumption / Production in kW
 	// ⏱ Time to Craft
 	// 🚫 Can't hand-craft
+
+	const nImgSize = 152;
 
 	const jURL = `/items.json`;
 	const jRequest = new Request(jURL);
@@ -37,23 +39,54 @@
 				jItem.desc = `${jItem.desc}`.replace(sMatch, `${TTItems[sMatch.slice(1)].name}`);
 			}
 		}
-		elItem.getElementsByTagName(`p`)[0].innerText = `${jItem.desc}`;
+		elItem.getElementsByClassName(`desc`)[0].innerText = `${jItem.desc}`;
 
 		// SPRITESHEET POSITION:
 		if ( !isNaN(`${jItem.img}`) ) {
-			elItem.getElementsByClassName(`img`)[0].style[`background-position-y`] = `-${jItem.img * 152}px`;
+			elItem.getElementsByClassName(`img`)[0].style[`background-position-y`] = `-${jItem.img * nImgSize}px`;
 		}
 
 		// ITEM TYPE:
 		if (jItem.type !== undefined) {
 			elItem.querySelector(`.type dd`).innerText = arItemTypes[`${jItem.type}`];
 		}
-
 		// ITEM CATEGORY:
 		if (jItem.cat !== undefined) {
 			elItem.querySelector(`.cat dd`).innerText = `${jItem.cat}`;
 		} else {
-			elItem.getElementsByClassName(`cat`)[0].remove();
+			// elItem.getElementsByClassName(`cat`)[0].style.visibility = 'hidden';
+		}
+		// IS FUEL?
+		if (!jItem.fuel) {
+			elItem.getElementsByClassName(`fuel`)[0].remove();
+		}
+
+		// CRAFT INGREDIENTS:
+		let elRecipe = elItem.getElementsByClassName(`recipe`)[0];
+		if (jItem.recipe === undefined) {
+			elRecipe.remove();
+		}
+		else if ( Object.values(jItem.recipe).length !== 0 ) {
+			let elRecipeTemplate = elRecipe.getElementsByTagName(`template`)[0];
+			// console.info(`${jItem.name}:`);
+			for (const prop in jItem.recipe) {
+				let elRecipeItem = elRecipeTemplate.content.cloneNode(true).firstChild;
+				// console.log(prop);
+				if (prop == -1) {
+					elItem.querySelector(`.recipe h4`).innerText = `Recipe (x${jItem.recipe[prop]}):`;
+					continue;
+				} else if (isNaN(prop)) {
+					console.warn(`Invalid recipe item for "${jItem.name}":\n"${prop}"`);
+					continue;
+				}
+				// console.log( TTItems[prop].name );
+				elRecipeItem.children[0].style[`background-position-y`] = `-${TTItems[prop].img * nImgSize*0.5}px`;
+				elRecipeItem.children[1].innerText = `${TTItems[prop].name} ${ jItem.recipe[prop]!=1 ? `(x${jItem.recipe[prop]})`:`` }`;
+				elRecipe.appendChild(elRecipeItem);
+			}
+		}
+		else {
+			elRecipe.innerHTML = '<h4>[RECIPE UNKNOWN]</h4>';
 		}
 
 		elItemsParent.appendChild(elItem);
