@@ -2,10 +2,10 @@
 
 (async function TTCalc() {
 	const arItemTypes = [
-		"Raw Resource",
-		"Craft Item",
-		"🛠️ Equip. Tool",
-		"📐 Building",
+		`Raw Resource`,
+		`Craft Item`,
+		`🛠️ Equip. Tool`,
+		`📐 Building`,
 	];
 
 	// ⚡️ Power Consumption / Production in kW
@@ -19,8 +19,8 @@
 	const TTItems = JSON.parse( await jResponse.text() );
 
 	// console.info(TTItems);
-	const elItemsParent = document.getElementById('Items');
-	const elItemTemplate = document.getElementsByTagName('template')[0];
+	const elItemsParent = document.getElementById(`Items`);
+	const elItemTemplate = document.getElementsByTagName(`template`)[0];
 	// console.info(elItemsParent);
 	// console.info(elItemTemplate);
 
@@ -28,32 +28,32 @@
 	{
 		let elItem = elItemTemplate.content.cloneNode(true).firstChild;	//is an array of length 1 w/o firstChild
 		// ITEM NAME:
-		elItem.querySelector('h3').innerText = `${jItem.name}`;
+		elItem.getElementsByTagName(`h3`)[0].innerText = `${jItem.name}`;
 
 		// ITEM DESCRIPTION:
-		if (`${jItem.desc}`.includes('$')) {
+		if (`${jItem.desc}`.includes(`$`)) {
 			for ( let sMatch of [...`${jItem.desc}`.matchAll(/\$\d+/g)].flat() ) {
 				// confirm sMatch is a natural?
 				jItem.desc = `${jItem.desc}`.replace(sMatch, `${TTItems[sMatch.slice(1)].name}`);
 			}
 		}
-		elItem.querySelector('p').innerText = `${jItem.desc}`;
+		elItem.getElementsByTagName(`p`)[0].innerText = `${jItem.desc}`;
 
 		// SPRITESHEET POSITION:
 		if ( !isNaN(`${jItem.img}`) ) {
-			elItem.querySelector('.img').style['background-position-y'] = `-${jItem.img * 152}px`;
+			elItem.getElementsByClassName(`img`)[0].style[`background-position-y`] = `-${jItem.img * 152}px`;
 		}
 
 		// ITEM TYPE:
 		if (jItem.type !== undefined) {
-			elItem.querySelector('.type dd').innerText = arItemTypes[`${jItem.type}`];
+			elItem.querySelector(`.type dd`).innerText = arItemTypes[`${jItem.type}`];
 		}
 
 		// ITEM CATEGORY:
 		if (jItem.cat !== undefined) {
-			elItem.querySelector('.cat dd').innerText = `${jItem.cat}`;
+			elItem.querySelector(`.cat dd`).innerText = `${jItem.cat}`;
 		} else {
-			elItem.querySelector(`.cat`).remove();
+			elItem.getElementsByClassName(`cat`)[0].remove();
 		}
 
 		elItemsParent.appendChild(elItem);
