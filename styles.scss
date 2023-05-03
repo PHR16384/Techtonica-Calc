@@ -14,7 +14,7 @@ html {
 	margin: 0;
 	min-height: 100vh;
 	overflow-x: clip;
-	white-space: pre-wrap;
+	// white-space: pre-wrap;
 	width: 100%;
 }
 body {
@@ -65,13 +65,14 @@ dt,dd {
 }
 
 .Item {
-	// next 3 lines = center items:
+	// next 3 lines = center items horizontally:
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	outline: 4px solid gray;
+	gap: 0.5rem;
 	border-radius: 8px;
-	padding-bottom: 0.5rem;
+	outline: 4px solid gray;
+	padding: 0.25rem 0 1.5rem;
 	// text-align: center;
 	width: 16.8rem;
 
@@ -90,9 +91,10 @@ dt,dd {
 	}
 
 	.desc {
-		height: 4.25rem;
-		padding: 0 0.5rem 0.4rem;
+		height: 5rem;
+		// padding: 0 0.5rem 0.4rem;
 		text-align: center;
+		// width: 100% !important;
 	}
 	.img {
 		background-image: url('/sheetM.webp');

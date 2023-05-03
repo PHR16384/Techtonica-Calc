@@ -9,7 +9,6 @@
 	];
 
 	// ⚡️ Power Consumption / Production in kW
-	// ⏱ Time to Craft
 	// 🚫 Can't hand-craft
 
 	const nImgSize = 152;
@@ -58,7 +57,7 @@
 		}
 		// IS FUEL?
 		if (!jItem.fuel) {
-			elItem.getElementsByClassName(`fuel`)[0].remove();
+			elItem.getElementsByClassName(`fuel`)[0].style.visibility = `hidden`;
 		}
 
 		// CRAFT INGREDIENTS:
@@ -87,6 +86,14 @@
 		}
 		else {
 			elRecipe.innerHTML = '<h4>[RECIPE UNKNOWN]</h4>';
+		}
+
+		// CRAFTING TIME:
+		let elTime = elItem.getElementsByClassName(`time`)[0];
+		if (jItem.time) {
+			elTime.children[1].innerText = `${jItem.time}s`;
+		} else {
+			elTime.remove();
 		}
 
 		elItemsParent.appendChild(elItem);
