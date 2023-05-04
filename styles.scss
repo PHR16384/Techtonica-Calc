@@ -5,6 +5,11 @@ $RAD: rgb(192,255,96);
 
 $IMGSIZE: 152px;
 
+@mixin GoldLabel {
+	background-color: $GOLD;
+	color: $NAVY;
+}
+
 html {
 	background-color: $NAVY;
 	box-sizing: border-box;
@@ -29,9 +34,8 @@ h1 {
 	text-align: center;
 }
 h2 {
+	@include GoldLabel;
 	font: 800 2rem 'Share Tech Mono';
-	background-color: $GOLD;
-	color: $NAVY;
 }
 h3 {
 	// next 3 lines are for fully centering text:
@@ -74,7 +78,7 @@ dt,dd {
 	outline: 4px solid gray;
 	padding: 0.25rem 0 1.5rem;
 	// text-align: center;
-	width: 16.8rem;
+	width: 17rem;
 
 	& > div:not(.img) {
 		font-family: 'Share Tech Mono';
@@ -91,10 +95,11 @@ dt,dd {
 	}
 
 	.desc {
+		font-family: inherit !important;
 		height: 5rem;
 		// padding: 0 0.5rem 0.4rem;
 		text-align: center;
-		// width: 100% !important;
+		width: 99% !important;
 	}
 	.img {
 		background-image: url('/sheetM.webp');
@@ -113,8 +118,7 @@ dt,dd {
 		text-transform: uppercase;
 	}
 	.cat {
-		background-color: $GOLD;
-		color: $NAVY;
+		@include GoldLabel;
 		font: 100 0.87rem '';
 		// padding-left: 5%;
 		// width: 100% !important;
@@ -127,7 +131,12 @@ dt,dd {
 		.img {
 			height: $IMGSIZE * 0.5;
 			width: $IMGSIZE * 0.5;
-			outline: none;
+			outline: 1.5px solid $RAD;
+			margin: 4px;
+			margin-left: 0;
 		}
+	}
+	.time {
+		font: 800 1.12rem '';
 	}
 }
