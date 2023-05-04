@@ -8,7 +8,6 @@
 		`📐Building`,
 	];
 
-	// ⚡️ Power Consumption / Production in kW
 	// 🚫 Can't hand-craft
 
 	const nImgSize = 152;
@@ -56,8 +55,26 @@
 			// elItem.getElementsByClassName(`cat`)[0].style.visibility = 'hidden';
 		}
 		// IS FUEL?
+		elFuel = elItem.getElementsByClassName(`fuel`)[0];
 		if (!jItem.fuel) {
-			elItem.getElementsByClassName(`fuel`)[0].style.visibility = `hidden`;
+			elFuel.style.visibility = `hidden`;
+		}
+
+		// POWER
+		elPower = elItem.getElementsByClassName(`power`)[0];
+		if (jItem.power)
+		{
+			elFuel.remove();	// space hog
+			let sPower = `<h4 class="`;
+			if (jItem.power > 0) {
+				sPower += `con">⚡️ Consumes`;
+			} else {
+				sPower += `pro">⚡️ Produces`
+			}
+			elPower.innerHTML = `${sPower} ${Math.abs(jItem.power)}kW</h4>`;
+		}
+		else {
+			elPower.remove();
 		}
 
 		// CRAFT INGREDIENTS:

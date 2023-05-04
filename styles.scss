@@ -2,6 +2,7 @@ $GOLD: goldenrod;
 $NAVY: rgb(24,24,36);
 $GREEN: rgb(24,96,48);
 $RAD: rgb(192,255,96);
+$RED: crimson;
 
 $IMGSIZE: 152px;
 
@@ -51,12 +52,20 @@ h3 {
 }
 h4 {
 	font: 800 1.4rem 'Share Tech Mono';
+	line-height: 1;
 	text-transform: uppercase;
 	width: 100%;
 }
 
 dt,dd {
 	display: inline-block;
+}
+
+.pro {
+	color: $RAD;
+}
+.con {
+	color: $RED;
 }
 
 
@@ -125,6 +134,11 @@ dt,dd {
 	}
 	.fuel {
 		text-align: center;
+	}
+	.power {
+		h4 {
+			margin: 0;
+		}
 	}
 	.recipe {
 		// padding-top: 0.5rem;	//
