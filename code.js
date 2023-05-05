@@ -8,8 +8,6 @@
 		`📐Building`,
 	];
 
-	// 🚫 Can't hand-craft
-
 	const nImgSize = 152;
 
 	const jURL = `/items.json`;
@@ -104,6 +102,8 @@
 		else {
 			elRecipe.innerHTML = '<h4>[RECIPE UNKNOWN]</h4>';
 		}
+
+		// 🚫 Can't hand-craft
 
 		// CRAFTING TIME:
 		let elTime = elItem.getElementsByClassName(`time`)[0];
