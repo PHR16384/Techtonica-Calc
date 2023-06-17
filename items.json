@@ -5,7 +5,9 @@
 		"img": "4",
 		"type": 0,
 		"cat": "Intermediates > Raw Materials",
-		"fuel": true
+		"fuel": true,
+		"recipe": {"5": 3},
+		"time": 0.7
 	},
 	{
 		"name": "Dirt",
@@ -213,18 +215,27 @@
 		"img": "27",
 		"type": 3,
 		"cat": "Logistics > Inserters",
-		"recipe": {"15": 2, "11": 3},
-		"time": 2,
+		"recipe": {"15": 2},
+		"time": 1,
 		"craft": ["asm"]
 	},
 
 	{
-		"name": "Pickaxe",
-		"desc": "Serviceable pickaxe.  Capable of breaking and harvesting ore from basic mineral veins.",
+		"name": "Standard Pickaxe",
+		"desc": "Capable of breaking and harvesting ore from basic mineral veins.",
 		"img": "37",
 		"type": 2,
 		"recipe": {"7": 2},
+		"time": 5,
 		"craft": ["asm"]
+	},
+	{
+		"name": "Molecular Scanner",
+		"desc": "Recovers data for the restoration of corrupted technologies and misplaced memories.",
+		"img": "42",
+		"type": 2,
+		"recipe": {"12": 1, "16": 1},
+		"time": 2
 	},
 
 	{
@@ -233,18 +244,18 @@
 		"img": "32",
 		"type": 3,
 		"cat": "Production > Resource Extraction",
-		"recipe": {"10": 2, "11": 18},
-		"time": 7.5,
+		"recipe": {"10": 3, "11": 15},
+		"time": 6,
 		"craft": ["asm"]
 	},
 	{
 		"name": "Smelter",
-		"desc": "Smelts ores into ingots.",
+		"desc": "Shielded furnace capable of smelting all ores into ingots.",
 		"img": "43",
 		"type": 3,
 		"cat": "Production > Smelting",
-		"recipe": {"2": 10, "13": 7},
-		"time": 3,
+		"recipe": {"2": 10, "13": 8},
+		"time": 5,
 		"craft": ["asm"]
 	},
 	{
@@ -282,7 +293,7 @@
 	},
 	{
 		"name": "Water Wheel",
-		"desc": "Uses water flow as means to generate kinetic energy that can be converted into electric power.  Used with Crank Generator.",
+		"desc": "Uses water flow as means to generate kinetic energy that can be converted into electric power.  Used with $31.",
 		"img": "30",
 		"type": 3,
 		"cat": "Production > Power",
@@ -301,18 +312,18 @@
 		"craft": ["asm"]
 	},
 	{
-		"name": "Red Memory Core",
-		"desc": "Processing unit that enables activation of standard technologies.  Core Cluster is formed at 10 Cores.",
+		"name": "Research Core 380 nm (Purple)",
+		"desc": "Enables activation of standard technologies.  Core Cluster is formed at 10 Cores.",
 		"img": "20",
 		"type": 3,
 		"cat": "Production > Research",
-		"recipe": {"14": 3, "15": 6},
-		"time": 8,
+		"recipe": {"14": 2, "15": 3},
+		"time": 2.25,
 		"craft": ["asm"]
 	},
 	{
-		"name": "Green Memory Core",
-		"desc": "$31 variant but it's GREEN.",
+		"name": "Green Research Core",
+		"desc": "$32 variant but it's GREEN.",
 		"img": "48",
 		"type": 3,
 		"cat": "Production > Research",
@@ -321,13 +332,13 @@
 
 	{
 		"name": "KindleVine Seed",
-		"desc": "Plant seed capable of accelerated growth.  Can be grown into $34 in a $27.",
+		"desc": "Plant seed capable of accelerated growth.  Can be grown into $35 in a $28.",
 		"img": "0",
 		"type": 0
 	},
 	{
 		"name": "KindleVine",
-		"desc": "Sturdy alien plant with otherworldly concentration of silicon.  Convertible into $33s and $35 in a $28.",
+		"desc": "Sturdy alien plant with otherworldly concentration of silicon.  Convertible into $34s and $36 in a $29.",
 		"img": "1",
 		"type": 0
 	},

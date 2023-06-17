@@ -87,7 +87,7 @@
 				let elRecipeItem = elRecipeTemplate.content.cloneNode(true).firstChild;
 				// console.log(prop);
 				if (prop == -1) {
-					elItem.querySelector(`.recipe h4`).innerText = `Recipe (x${jItem.recipe[prop]}):`;
+					elItem.querySelector(`.recipe h4`).innerText = `Ingredients (x${jItem.recipe[prop]}):`;
 					continue;
 				} else if (isNaN(prop)) {
 					console.warn(`Invalid recipe item for "${jItem.name}":\n"${prop}"`);
