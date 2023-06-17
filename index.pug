@@ -7,15 +7,16 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		- for (let x=0; x<GoogleFonts.length; x++)
-			link(rel='stylesheet', href=`https://fonts.googleapis.com/css?family=${GoogleFonts[x]}`)
+		each Font in GoogleFonts
+			link(rel='stylesheet', href=`https://fonts.googleapis.com/css?family=${Font}`)
 		style
-			include ./dist/styles.css
-		script(type='text/javascript', defer)
-			include ./code.js
+			//- daisy-chained JS-transformers (see Package deps): SCSS, then CSS minifier:
+			include:clean-css:scss styles.scss
+		script(defer)
+			include code.js
 		title= TITLE
 
-	body 
+	body
 		h1= TITLE
 
 		h2 List of items:
